@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* Header Section */
+#header {
+    display: flex;
+    flex-direction: column; /* Stack logo and navbar vertically */
+    align-items: center;    /* Center contents horizontally */
+    background-color: #E3E6F3;
+    padding: 20px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+/* Logo */
+.logo {
+    height: 100px; /* Resize the logo */
+    width: auto;
+}
+
+/* Navbar */
+#navbar {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin-top: 15px;
+}
+
+#navbar li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-family: sans-serif;
+}
