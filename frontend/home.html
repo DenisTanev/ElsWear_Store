@@ -8,35 +8,67 @@
     <title>Начална Страница</title>
 </head>
 <body>
+
     <section id="header">
         <div>
-            <a href="#"><img src="img/logo9.png" class="logo" alt="El's Wear Logo"></a>
+            <a href="home.html"><img src="img/logo9.png" class="logo" alt="El's Wear Logo"></a>
         </div>
         <div class="nav-container">
             <ul id="navbar">
-                <li><a href="#">Начало</a></li>
+                <li><a class="active" href="home.html">Начало</a></li>
                 <li><a href="#">Момче</a></li>
                 <li><a href="#">Момиче</a></li>
-                <li><a href="#">За нас</a></li>
-                <li><a href="#">Контакти</a></li>
+                <li><a href="#">Аксесоари</a></li>
+                <li><a href="#">Промо</a></li>
+                <li><a href="#">Ново</a></li>
+                <li class="search-wrapper">
+                    <button id="search-toggle" class="search-icon" type="button">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <div id="search-dropdown">
+                        <input type="text" placeholder="Търси продукти..." />
+                        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </li>
                 <li><a href="#"><i class="fa-solid fa-user"></i>Моят Профил</a></li>
                 <li><a href="#"><i class="fa-solid fa-heart"></i>Любими</a></li>
                 <li><a href="#"><i class="fa-solid fa-bag-shopping"></i>Количка</a></li>
                 
                 <div class="nav-main-items-container">
-                    <li><a href="#">Начало</a></li>
+                    <li><a class="active" href="#">Начало</a></li>
                     <li><a href="#">Момче</a></li>
                     <li><a href="#">Момиче</a></li>
-                    <li><a href="#">За нас</a></li>
-                    <li><a href="#">Контакти</a></li>
+                    <li><a href="#">Аксесоари</a></li>
+                    <li><a href="#">Промо</a></li>
+                    <li><a href="#">Ново</a></li>
                 </div>
                 
                 <div class="nav-user-items-container">
+                    <li class="search-wrapper">
+                        <button id="search-toggle" class="search-icon" type="button">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                        <div id="search-dropdown">
+                            <input type="text" placeholder="Търси продукти..." />
+                            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </li>
                     <li><a href="#"><i class="fa-solid fa-user"></i>Моят Профил</a></li>
                     <li><a href="#"><i class="fa-solid fa-heart"></i>Любими</a></li>
                     <li><a href="#"><i class="fa-solid fa-bag-shopping"></i>Количка</a></li>
                 </div>
             </ul>
+        </div>
+    </section>
+
+    <section id="hero">
+        <div id="hero-text">
+            <h4>Онлайн Магазин За Детски и Бебешки Дрехи и Обувки</h4>
+            <h1>El's Wear</h1>
+            <h2>Стил за бебета и деца, създаден с любов!</h2>
+        </div>
+        <div id="hero-image">
+            <img src="img/hero.png" alt="Hero Image">
         </div>
     </section>
     

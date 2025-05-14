@@ -11,30 +11,86 @@ body {
     padding: 0; 
     width: 100%;
     padding-top: 220px;
-} 
+    background-color: rgb(243, 251, 255);
+}
+
+h1{
+    font-size: 50px;
+    line-height: 64px;
+    color: #222;
+}
+
+h2{
+    font-size: 46px;
+    line-height: 64px;
+    color: #222;
+}
+
+h4{
+    font-size: 20px;
+    color: #222;
+}
+
+h6{
+    font-weight: 700;
+    font-size: 12px;
+}
+
+p{
+    font-size: 16px;
+    color:#222;
+    margin: 15px 0 20px 0;
+}
+
+.section-p1{
+    padding: 40px 0;
+}
+
+.section-m1{
+    margin: 40px 0;
+}
  
+
+
+
 /* Header Section */ 
-#header { 
-    display: flex; 
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #d0e6f7; 
-    padding: 20px 0; 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-    transition: all 0.3s ease;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-} 
+    background: linear-gradient(to right, #cce5ff, #ffd6e0);
+    padding: 20px 0;
+    transition: padding 0.3s ease, flex-direction 0.3s ease;
+    overflow: hidden;
+}
+
+#header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #d0e6f7;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: -1;
+}
 
 #header.scrolled {
     flex-direction: row;
     justify-content: space-between;
-    padding: 10px;
+    padding: 10px 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
 }
+
+#header.scrolled::before {
+    opacity: 1;
+}
+
  
 .logo { 
     height: 150px;
@@ -103,12 +159,167 @@ body {
     display: none;
 }
 
+#navbar li,
+#nav-main-items-container li
+{
+    position: relative;
+}
+
 #navbar li a { 
     text-decoration: none; 
     color: #444;
     font-size: 18px;
 }
 
+#navbar li a:hover,
+#navbar li a.active,
+#nav-main-items-container li a:hover,
+#nav-main-items-container li a.active {
+    color: rgb(44, 31, 212);
+}
+
+#navbar li a::after,
+#nav-main-items-container li a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: rgb(44, 31, 212);
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.25s ease;
+}
+
+#navbar li a.active::after,
+#nav-main-items-container li a.active::after,
+#navbar li a:hover::after,
+#nav-main-items-container li a:hover::after {
+    width: 50%;
+}
+
 #navbar li a i {
     margin-right: 5px;
+}
+
+#header,
+#navbar,
+.nav-container,
+.search-wrapper {
+    overflow: visible !important;
+    z-index: 999;
+}
+
+/* Base styling for the container in the row */
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #444;
+    font-size: 18px;
+    padding: 0;
+}
+
+/* Dropdown styling */
+#search-dropdown {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background: white;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 9999;
+    white-space: nowrap;
+}
+
+#search-dropdown input {
+    padding: 6px 10px;
+    font-size: 14px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    outline: none;
+    width: 180px;
+}
+
+#search-dropdown button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    color: #444;
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+/* Home Page */
+#hero{
+    background: linear-gradient(to right, #cce5ff, #ffd6e0);
+    padding: 0 80px;
+    height: 60vh;
+    width: 100%;
+    z-index: -1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#hero-text {
+    flex: 1;
+    padding-right: 40px;
+}
+
+#hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hero-image img {
+    max-width: 100%;
+    max-height: 50vh;
+    object-fit: contain;
+}
+
+#hero h4 {
+    padding-bottom: 30px;
+    font-size: 25px;
+    margin: 0;
+    font-weight: 700;
+}
+
+#hero h1 {
+    margin: 0;
+    padding-bottom: 30px;
+    font-size: 90px;
+    background: linear-gradient(to right, rgb(66, 66, 170), rgb(226, 137, 152));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+#hero h2 {
+    margin: 0;
+    padding-bottom: 20px;
+    font-size: 30px;
+    font-weight: 700;
 }
